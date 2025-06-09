@@ -25,15 +25,4 @@ require_once SH_DIR . 'includes/class-sh-shortcodes.php';
 require_once SH_DIR . 'includes/class-sh-schema.php';
 require_once SH_DIR . 'includes/class-sh-logger.php';
 
-// Initialize shortcodes & blocks
 add_action( 'plugins_loaded', array( 'SH_Shortcodes', 'init' ) );
-add_action( 'init',          array( 'SH_Shortcodes', 'register_gutenberg_blocks' ) );
-
-// Elementor integration: defer until Elementor is loaded
-add_action( 'elementor/loaded', function() {
-    require_once SH_DIR . 'includes/class-sh-elementor.php';
-    add_action(
-        'elementor/widgets/widgets_registered',
-        array( 'SH_Elementor_Widget', 'register_widget' )
-    );
-} );
