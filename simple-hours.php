@@ -24,5 +24,8 @@ require_once SH_DIR . 'includes/class-sh-settings.php';
 require_once SH_DIR . 'includes/class-sh-shortcodes.php';
 require_once SH_DIR . 'includes/class-sh-schema.php';
 require_once SH_DIR . 'includes/class-sh-logger.php';
+require_once SH_DIR . 'includes/class-sh-elementor.php';
 
 add_action( 'plugins_loaded', array( 'SH_Shortcodes', 'init' ) );
+add_action( 'init', array( 'SH_Shortcodes', 'register_gutenberg_blocks' ) );
+add_action( 'elementor/widgets/register', array( 'SH_Elementor_Widget', 'register_widget' ) );

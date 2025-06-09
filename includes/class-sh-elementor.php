@@ -16,7 +16,7 @@ class SH_Elementor_Widget extends Widget_Base {
         $this->start_controls_section('style_section',['label'=>'Style','tab'=>Controls_Manager::TAB_STYLE]);
         $this->add_control('text_color',['label'=>'Text Color','type'=>Controls_Manager::COLOR]);
         $this->add_control('bg_color',['label'=>'Background Color','type'=>Controls_Manager::COLOR]);
-        $this->add_control('border_color',['label'=>'Border Color','type'=>Controls_Manager::TAB_COLOR]);
+        $this->add_control('border_color',['label'=>'Border Color','type'=>Controls_Manager::COLOR]);
         $this->add_group_control(Group_Control_Typography::get_type(), ['name'=>'typo','selector'=>'{{WRAPPER}}']);
         $this->add_control('padding',['label'=>'Padding','type'=>Controls_Manager::SLIDER,'size_units'=>['px']]);
         $this->add_control('margin',['label'=>'Margin','type'=>Controls_Manager::SLIDER,'size_units'=>['px']]);
