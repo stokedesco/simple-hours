@@ -24,6 +24,13 @@ class SH_Settings {
         add_settings_field('sh_weekly', 'Weekly Hours', array($this,'weekly_render'), 'sh_settings','sh_section');
         add_settings_field('sh_holidays','Holiday Overrides', array($this,'holidays_render'),'sh_settings','sh_section');
         add_settings_field('sh_debug','Debug Mode', array($this,'debug_render'),'sh_settings','sh_section');
+
+        add_settings_section(
+            'sh_shortcodes',
+            'Shortcodes',
+            array($this, 'shortcodes_info'),
+            'sh_settings'
+        );
     }
 
     public function weekly_render(){
@@ -73,6 +80,15 @@ class SH_Settings {
     public function debug_render(){
         $val = get_option(self::OPTION_DEBUG, false);
         echo "<label><input type='checkbox' name='".self::OPTION_DEBUG."' value='1' ".($val?'checked':'')."/> Enable Debug Mode</label>";
+    }
+
+    public function shortcodes_info() {
+        echo '<p>Use these shortcodes to display opening hours:</p>';
+        echo '<ul>';
+        echo '<li><code>[simplehours_today]</code> – e.g. “We\'re open from 9:00 to 17:00.”</li>';
+        echo '<li><code>[simplehours_until]</code> – e.g. “Open until 17:00.”</li>';
+        echo '<li><code>[simplehours_fullweek]</code> – outputs a weekly table of hours.</li>';
+        echo '</ul>';
     }
 
     public function enqueue_scripts($hook){
