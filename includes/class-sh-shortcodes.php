@@ -7,9 +7,17 @@ class SH_Shortcodes {
     }
 
     public static function get_data(){
-        $weekly = get_option(SH_Settings::OPTION_WEEKLY, array());
-        $holidays = get_option(SH_Settings::OPTION_HOLIDAYS, array());
-        return array($weekly, $holidays);
+        $weekly = get_option( SH_Settings::OPTION_WEEKLY, array() );
+        if ( ! is_array( $weekly ) ) {
+            $weekly = array();
+        }
+
+        $holidays = get_option( SH_Settings::OPTION_HOLIDAYS, array() );
+        if ( ! is_array( $holidays ) ) {
+            $holidays = array();
+        }
+
+        return array( $weekly, $holidays );
     }
 
     public static function today(){
