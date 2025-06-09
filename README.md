@@ -13,14 +13,11 @@
   - `[simplehours_until]`
   - `[simplehours_fullweek]`
 
-- Gutenberg Block: *Simple Hours*
-- Elementor Widget: *Simple Hours*
 
 ## Filters & Actions
 
 - `simplehours_open_text`
 - `simplehours_before_list`
-- `simplehours_elementor_args`
 
 ## CSS Variables
 

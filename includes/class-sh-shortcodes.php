@@ -94,9 +94,4 @@ class SH_Shortcodes {
         return $out;
     }
 
-    public static function register_gutenberg_blocks(){
-        if (function_exists('register_block_type')){
-            register_block_type(__DIR__ . '/../src/block.js');
-        }
-    }
 }

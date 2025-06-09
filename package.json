@@ -1,12 +1,6 @@
 {
   "name": "simple-hours",
   "version": "1.0.0",
-  "main": "simple-hours.php",
-  "scripts": {
-    "build": "wp-scripts build",
-    "start": "wp-scripts start"
-  },
-  "devDependencies": {
-    "@wordpress/scripts": "^24.0.0"
-  }
+  "main": "simple-hours.php"
 }
+
